@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 >>POST - user login
 >>GET - user details
 >>GET - logout
-*/
+*///hello
 router.post("/register",async (req,res)=>{
     const {username,password}=  req.body
 
