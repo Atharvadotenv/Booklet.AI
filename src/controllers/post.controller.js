@@ -37,8 +37,4 @@ try{
 }
 
 
-
-
-
-
 module.exports = {userPostController};

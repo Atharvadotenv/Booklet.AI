@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     password:{
         type:String,
           //Schema level validtion
-        }
+        }        
 })
 const userModel = mongoose.model("user",userSchema);
 
