@@ -18,7 +18,7 @@ async function scrapperController(req, res) {
 
     return res.json({
       success: true,
-      preview: articleText.slice(0, 300),
+      preview: articleText.slice(0, 400),
     });
 
   } catch (err) {
