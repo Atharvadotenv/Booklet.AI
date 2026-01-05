@@ -1,25 +1,28 @@
+// models/post.model.js
 const mongoose = require("mongoose");
 
-const postSchema = new mongoose.Schema({
-    value:{
-        type:String,
-        required:true,
-        validate:{
-            validator:function(v){
-                if(this.contentType == "link"){
-                    return /^https?:\/\/.+/.test(v);
-                }
-                return true;
-            },
-            message:"Invalid URL"
-        }
+const postSchema = new mongoose.Schema(
+  {
+    contentType: {
+      type: String,
+      enum: ["text", "link"], // only allow text or link
+      required: true
     },
-    contentType:{
-        type:String,
-        enum:["text","link"],
-        required: true
+    originalContent: {
+      type: String,
+      required: true
+    },
+    aiContent: {
+      type: String,
+      required: true
+    },
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+      required: true
     }
-});
-const postModel = mongoose.model("post",postSchema);
+  },
+  { timestamps: true }
+);
 
-module.exports = postModel;
+module.exports = mongoose.model("post", postSchema);
