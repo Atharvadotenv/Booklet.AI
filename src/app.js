@@ -7,6 +7,7 @@ app.use(cors({
 }));
 const authRoutes = require("../src/routes/auth.routes");
 const postRoutes = require("../src/routes/post.routes");
+const postDataRoutes = require("../src/routes/postData.routes");
 // const scrapperRoutes = require("../src/routes/scrapper.routes");
 const cookieParser = require("cookie-parser");
 
@@ -16,6 +17,7 @@ app.use(cookieParser());// cookie middleware
 
 app.use("/api/auth", authRoutes);
 app.use("/api/post", postRoutes);
+app.use("/api/data",postDataRoutes);
 // app.use("/api/scrapping",scrapperRoutes);
 
 module.exports = app;

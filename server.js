@@ -1,6 +1,6 @@
 require('dotenv').config();
-const app = require("../Booklet.AI/src/app");
-const connectDB = require("../Booklet.AI/src/db/db");
+const app = require("../backend/src/app");
+const connectDB = require("../backend/src/db/db");
 
 connectDB();
 
