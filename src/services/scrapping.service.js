@@ -1,5 +1,4 @@
 // services/scrapping.service.js
-const puppeteer = require("puppeteer");
 
 async function scrapper(url) {
   const browser = await chromium.launch({
