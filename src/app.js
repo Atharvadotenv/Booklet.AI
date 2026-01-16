@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 app.use(cors({
-  origin: "https://frontend-for-arti-clip-ai.vercel.app/",
+  origin: "https://frontend-for-arti-clip-ai.vercel.app",
   credentials: true,
 }));
 
