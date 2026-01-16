@@ -1,4 +1,5 @@
-import { chromium } from "playwright";
+const { chromium } = require("playwright");
+
 
 async function scrapper(url) {
   const browser = await chromium.launch({
@@ -15,4 +16,4 @@ async function scrapper(url) {
   return content;
 }
 
-export default scrapper;
+module.exports = scrapper

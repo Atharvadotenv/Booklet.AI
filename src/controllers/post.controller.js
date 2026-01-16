@@ -1,5 +1,5 @@
 // controllers/post.controller.js
-import scrapper from "../services/scrapping.service.js";
+const scrapper = require("../services/scrapping.service");
 
 const postModel = require("../models/post.model");
 
