@@ -16,4 +16,4 @@ async function scrapper(url) {
   return content;
 }
 
-module.exports = scrapper;
+export default scrapper;
