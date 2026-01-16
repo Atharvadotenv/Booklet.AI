@@ -1,4 +1,3 @@
-// services/scrapping.service.js
 import { chromium } from "playwright";
 
 async function scrapper(url) {
