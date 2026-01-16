@@ -2,27 +2,18 @@
 const puppeteer = require("puppeteer");
 
 async function scrapper(url) {
-  let browser;
-  try {
-    browser = await puppeteer.launch({
-      headless: true,
-      args: ["--no-sandbox",
-        "--disable-setuid-sandbox",
-        "--disable-dev-shm-usage"]
-    });
+  const browser = await chromium.launch({
+    headless: true,
+    args: ["--no-sandbox"]
+  });
 
-    const page = await browser.newPage();
-    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 0 });
+  const page = await browser.newPage();
+  await page.goto(url, { waitUntil: "networkidle" });
 
-    const text = await page.evaluate(() => document.body?.innerText || "");
-    return text;
+  const content = await page.content();
 
-  } catch (err) {
-    console.error("Scrape error:", err.message);
-    throw new Error("Failed to scrape the article");
-  } finally {
-    if (browser) await browser.close();
-  }
+  await browser.close();
+  return content;
 }
 
 module.exports = scrapper;
