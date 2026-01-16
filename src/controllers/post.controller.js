@@ -1,6 +1,6 @@
 // controllers/post.controller.js
+import { scrapper } from "../services/scrapping.service"
 const postModel = require("../models/post.model");
-const scrapper = require("../services/scrapping.service");
 const generateSummary = require("../services/ai.service");
 
 async function userPostController(req, res) {
