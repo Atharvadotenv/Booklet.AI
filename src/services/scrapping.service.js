@@ -1,4 +1,5 @@
 // services/scrapping.service.js
+import { chromium } from "playwright";
 
 async function scrapper(url) {
   const browser = await chromium.launch({
